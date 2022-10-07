@@ -1,0 +1,18 @@
+schema = 3
+
+[mod]
+  [mod."github.com/go-piv/piv-go"]
+    version = "v1.7.0"
+    hash = "sha256-q6MCxoqAbQ6HaTCTUhFZPCSgqH+VeioaGRnguPCceXA="
+  [mod."github.com/gopasspw/pinentry"]
+    version = "v0.0.2"
+    hash = "sha256-MqEbvDl6jE5uShf7Ia5kBRP5p7TXPwRVbPaK2ia62mk="
+  [mod."golang.org/x/crypto"]
+    version = "v0.0.0-20210421170649-83a5a9bb288b"
+    hash = "sha256-/yDFKCgawG9Othmh5y0O3Vx79JH2t4N7ecp1Nr+Li3o="
+  [mod."golang.org/x/sys"]
+    version = "v0.0.0-20210220050731-9a76102bfb43"
+    hash = "sha256-0J8//c/Tp0+0AjME9BjaMT96weCF8sKi332LzhtRFF4="
+  [mod."golang.org/x/term"]
+    version = "v0.0.0-20201210144234-2321bbc49cbf"
+    hash = "sha256-6nCt95JDvry3sJLS2JhAKm0IVu7sGoCM9fbJS2+OlRI="
