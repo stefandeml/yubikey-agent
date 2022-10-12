@@ -6,21 +6,18 @@
   inputs.gomod2nix.url = "github:nix-community/gomod2nix";
 
   outputs = { self, nixpkgs, flake-utils, gomod2nix }:
-    (flake-utils.lib.eachDefaultSystem
-      (system:
+    # (flake-utils.lib.eachSystem (flake-utils.lib.defaultSystems ++ [flake-utils.lib.system.aarch64-darwin])
+    #   (system:
         let
           pkgs = import nixpkgs {
-            inherit system;
+            system = "aarch64-darwin";
             overlays = [ gomod2nix.overlays.default ];
           };
 
         in
         {
-	  #devShells.default = pkgs.mkShell {
-	  #	buildInputs = with pkgs; [ gomod2nix ];
-	  #};
-          packages.default = pkgs.callPackage ./. { };
-          devShells.default = import ./shell.nix { inherit pkgs self; };
-        })
-    );
+          packages.aarch64-darwin.default = pkgs.callPackage ./. { };
+          devShells.aarch64-darwin.default = import ./shell.nix { inherit pkgs self; };
+        };
+    # )
 }
